@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9adad8;
+  user-select: none;
+}
+
+.game {
+  width: 50%;
+  height: 600px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  /* sets how far the object is from the user. lower the value the greater the effect */
+}
+
+.card {
+  width: calc(25% - 10px);
+  height: calc(33% - 10px);
+  position: relative;
+  margin: 5px;
+  transition: transform 0.5s;
+  /* transition added for flip class to make the rotation slower */
+  transform-style: preserve-3d;
+  /* changes the perspective making it more 3d */
+}
+
+.frontFace, .backFace {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  background-color: #876098;
+  border: 1px solid black;
+  border-radius: 10px;
+  backFace-visibility: hidden;
+  /* added to hide the back face of the card when flipped */
+}
+
+/* We create card:active to add properties when we click on the element */
+.card:active {
+  transform: scale(0.97);
+  /* Scale changes the size of the card */
+  transition: transform 0.2s;
+  /* transition changes how fast you see the affect */
+}
+
+.backFace:hover {
+  background-color: #8745A4;
+  cursor: pointer;
+}
+
+.flip {
+  transform: rotateY(180deg);
+  /* rotateY makes the card flip 180deg */
+  /* we also add this class in java script */
+}
+
+.frontFace {
+  transform: rotateY(180deg);
+  /* preparing front face by rotating before back face */
+}
+
+.timer {
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 640px;
+  font-size: 50px;
+  background-color: #876098;
+  color: #9adad8;
+  border: solid black 6px;
+  outline: none;
+  display: inline-block;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  border-radius: 15px;
+  opacity: 0%;
+}
+
+.attempts {
+  position: absolute;
+  margin-top: 0px;
+  font-size: 60px;
+  background-color: #876098;
+  padding: 10px;
+  border-radius: 15px;
+  border: 5px solid black;
+  font-weight: bolder;
+  margin-left: 640px;
+}
+
+button {
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 1508px;
+  font-size: 40px;
+  background-color: #876098;
+  color: #9adad8;
+  border: solid black 5px;
+  outline: none;
+  display: inline-block;
+  padding: 15px 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  border-radius: 15px;
+  box-shadow: 0 9px #222;
+}
+
+button:hover {background-color: #8745A4}
+
+button:active {
+  background-color: #876098;
+  box-shadow: 0 5px #000;
+  transform: translateY(4px);
+}
+
+.timeStart {
+  margin-left: 1200px;
+}
+
+.attemptOp {
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 640px;
+  font-size: 50px;
+  background-color: #876098;
+  color: #9adad8;
+  border: solid black 6px;
+  outline: none;
+  display: inline-block;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  border-radius: 15px;
+  opacity: 0%;
+}
+
+.timerOp {
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 640px;
+  font-size: 50px;
+  background-color: #876098;
+  color: #9adad8;
+  border: solid black 6px;
+  outline: none;
+  display: inline-block;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  border-radius: 15px;
+  opacity: 100%;
+}
